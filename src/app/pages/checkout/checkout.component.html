@@ -1,0 +1,87 @@
+<div class="wrapper" *ngIf="foodItems.length > 0">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 col-xl-6" *ngIf="!placeOrder">
+      <div class="order-table mt-5">
+        <h3>Order summary</h3>
+        <h1 class="mb-3">{{ foodItems[0].resName }}</h1>
+        <table class="table">
+          <tbody *ngFor="let item of foodItems; let i = index">
+            <tr>
+              <td>
+                <button type="button" class="btn-inc" (click)="inc(item)">
+                  <i class="bi bi-plus"></i>
+                </button>
+                <span>{{ item.qty }}</span>
+                <button type="button" class="btn-dcr" (click)="dec(item.id)">
+                  <i class="bi bi-dash"></i>
+                </button>
+              </td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.qty * item.price }} rsd</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="delivery-details">
+        <h2>Delivery details</h2>
+        <app-google-maps></app-google-maps>
+        <h4 class="mt-4 mb-4">
+          <span><i class="bi bi-flag p-4"></i></span>{{ user.address }}.
+        </h4>
+        <h4 class="mt-4 mb-4">
+          <span><i class="bi bi-clock p-4"></i></span>45 min
+        </h4>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6" *ngIf="!placeOrder">
+      <div class="checkout mt-5" >
+        <h2 class="mb-4">Summary</h2>
+        <p>
+          Total: <strong>{{ total }} rsd </strong>
+        </p>
+        <p>Delivery: <strong>Free delivery</strong></p>
+        <h4>Total: {{ total }}.00 rsd</h4>
+        <button class="btn btn-success order mt-4" (click)="order(foodItems)">
+          Place an Order
+        </button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="ordered text-center" *ngIf="placeOrder">
+        <h2 class="mb-4" > Your Order</h2>
+        <ng-container *ngFor="let data of orderDetail; let i = index">
+          <p>{{ orderDetail[i].name }} x {{ orderDetail[i].qty }} = <strong>{{ orderDetail[i].qty * orderDetail[i].price }} rsd</strong></p>
+        </ng-container>
+        <h4> <strong> Grand Total: {{ total }}.00 rsd</strong> </h4>
+        <button class="btn btn-success home-button" routerLink="/food-delivery">Home Page</button>
+      </div>
+      <div *ngIf="placeOrder">
+        <p class="message">{{ message }}</p>
+      </div>
+    </div>
+  </div>
+  <section *ngIf="!placeOrder">
+    <button class="btn btn-success order mt-4" (click)="order(foodItems)">
+      Place an Order
+    </button>
+  </section>
+</div>
+<ng-container *ngIf="foodItems.length < 1">
+  <div class="container">
+    <div class="card">
+      <div class="center">
+        <img
+          src="https://icon-library.com/images/my-cart-icon/my-cart-icon-12.jpg"
+          alt=""
+        />
+        <h4>Your cart is empty!</h4>
+        <h6>Add item to it now</h6>
+        <div>
+          <button class="btn btn-primary" type="button" (click)="toShopping()">
+            Shop Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

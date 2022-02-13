@@ -1,0 +1,236 @@
+/*  Header image*/
+
+.bg-image{
+    background-image: url(../../../assets/img/hermes-rivera-Ww8eQWjMJWk-unsplash.jpg);
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+  }
+
+
+/* Food image */
+
+img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    
+}
+
+/* Food box */
+
+.food-title{
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.food-box{
+    background-color: white;
+    box-shadow:  0 1px 14px rgba(0,0,0, .12);
+    border-radius: 10px;
+    
+}
+
+.food-box:hover{
+  transform: scale(1.1);
+}
+
+.food-box p {
+    padding: 10px;
+    font-weight: bold;
+}
+.food-box .ingredients{
+    font-weight: 400;
+}
+
+.box{
+    margin-right: 15px;
+}
+
+/* Sticky Cart */
+
+div.main-right{
+    height: 2000px;
+    width: 35%;
+    float: right;
+    padding: 0;
+}
+
+.card {
+    position: sticky;
+    -webkit-position: sticky;
+    top: 0;
+    right: 0;
+    font-size: 22px;
+    align-items: center;
+    background-color: white;
+    margin-top: 50px;
+    margin-right: 50px;
+    border-radius: 15px;
+    width: 300px;
+    min-height: 400px;
+    box-shadow: 0 1px 14px rgba(0, 0, 0, 0.12);
+  }
+  
+  th {
+    font-size: 16px;
+  }
+  
+  td {
+    font-size: 16px;
+  }
+  
+  td input {
+    border: none;
+    width: 30px;
+  }
+  
+  .checkout {
+    width: 80%;
+    margin-top: auto;
+    font-size: 18px;
+  }
+  
+  .checkout button {
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: rgb(107, 219, 107);
+    border-radius: 15px;
+    color: white;
+  }
+  
+  .card h4 {
+    background-color: tomato;
+    color: white;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+  }
+  
+  .cart-name {
+    font-size: 18px;
+  }
+
+  section{
+      display: none;
+  }
+
+  .btn-inc{
+    background-color: white;
+    border: 1px solid tomato;
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+  
+  .btn-dcr{
+    background-color: white;
+    border: 1px solid tomato;
+    border-radius: 100%;
+    margin-left: 5px;
+  }
+  
+/* Main content */
+
+.main-left {
+    width: 65%;
+    float: left;
+    padding: 0 150px 0 150px;
+}
+
+.cart-button{
+    width: 100%;
+    background-color: rgb(107, 219, 107);
+    border:none;
+    color: white;
+}
+
+.price{
+    background-color: tomato;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+}
+
+
+@media screen and (max-width: 1395px){
+
+
+  .main-right {
+      padding: 0 100px 0 100px;
+  }
+    
+}
+
+@media screen and (max-width: 992px){
+
+    .wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-left {
+        padding: 0
+    }
+
+    .main-right{
+        display: none;
+    }
+
+    section {
+        display: inline-block;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;  
+        z-index: 1;
+      }
+    
+    section p {
+        background-color: tomato;
+        padding: 15px;
+        width: 300px;
+        border-radius: 15px;
+        margin: 0 auto 10px;
+        text-align: center;
+        color: white;
+      }
+
+}
+
+@media screen and (max-width: 600px){
+
+      .bg-text h2 {
+          font-size: 1.3em;
+        }
+      .bg-text p{
+          font-size: 13px;
+      }  
+      .bg-text{
+          width: 80%;
+      }
+    
+}

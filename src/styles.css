@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+body{
+    height: 100vh;
+    font-family:'Merriweather Sans', sans-serif;;
+    background-color: #f7f7f7;
+    
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

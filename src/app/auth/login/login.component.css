@@ -1,0 +1,39 @@
+form {
+    width: 500px;
+    margin: 15px auto 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:  0 1px 14px rgba(0,0,0, .12);
+}
+
+.login {
+    width: 100%;
+    background-color: rgb(50, 207, 50);
+    color: white;
+}
+.singup{
+    width: 100%;
+    background-color: red;
+    color: white;
+    margin-bottom: 10px;
+}
+.title{
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input{
+    border-radius: 5px;
+}
+
+input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+@media screen and (max-width: 576px){
+    form {
+        width: 80%;
+        margin: 30px  auto 0;
+        padding: 15px;
+    }
+}

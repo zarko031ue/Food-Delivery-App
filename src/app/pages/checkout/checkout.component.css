@@ -1,0 +1,219 @@
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Card - no items */
+
+.card{ 
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+}
+
+.center{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h4,
+h6 {
+    z-index: -1;
+    font-weight: 400;
+}
+
+.center img{
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 160px;
+    width: 250px;
+    margin: 20px 0;
+}
+
+/* Summary */
+
+.checkout{
+    width: 60%;
+    margin: 15px auto;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow:  0 1px 14px rgba(0,0,0, .12);
+    padding: 15px;
+} 
+
+.checkout h2 {
+    text-align: center;
+    font-weight: 700;
+    color: tomato;
+}
+
+.checkout p {
+    font-size: 17px;
+}
+
+.checkout h4 {
+    font-weight: 600;
+}
+
+.message {
+    text-align: center;
+    margin: 15px auto;
+    font-weight: 700;
+    color:rgb(107, 219, 107);
+}
+
+.order{
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid;
+    border-radius: 15px;
+    background-color:rgb(107, 219, 107);
+}
+
+.ordered{
+    width: 30%;
+    margin: 15px auto;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow:  0 1px 14px rgba(0,0,0, .12);
+    padding: 15px;
+}
+
+/* Table */
+
+.order-summary h3, h1{
+    font-weight: 900;
+    color: tomato;
+}
+
+.qty{
+    width: 3em;
+    text-align: center;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.btn-inc{
+    background-color: white;
+    border: 1px solid tomato;
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+  
+.btn-dcr{
+    background-color: white;
+    border: 1px solid tomato;
+    border-radius: 100%;
+    margin-left: 5px;
+  }
+
+.home-button{
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color:rgb(107, 219, 107);
+    border: none;
+}
+/* Delivery Details */
+
+.delivery-details{
+    margin-top: 50px;
+    z-index: 0;
+}
+
+.delivery-details h2{
+    font-weight: 600;
+}
+
+.bi-flag, 
+.bi-clock{
+    color: tomato;
+}
+
+section{
+    display: none;
+}
+
+
+/*Empty cart */
+
+.card {
+    border-radius: 20px;
+    box-shadow:  0 1px 14px rgba(0,0,0, .12);
+}
+
+.card h4{
+    font-weight:400;
+}
+
+.card h6 {
+    font-weight: 400;
+}
+
+.card button {
+    background-color: tomato;
+    border-radius: 15px;
+    border: 1px solid tomato;
+}
+
+@media screen and (max-width: 576px){
+    
+    .cart{
+        width: 80%;
+    }   
+
+    .ordered{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 768px){
+    
+    .cart{
+        width: 80%;
+    }
+
+    .checkout{
+        display: inline-block;
+        width: 100%;
+
+    }
+
+    .checkout h2{
+        display: inline-block;
+    }
+
+    .checkout .order{
+        display: none;
+    }
+
+    section {
+        display: inline-block;
+        width: 90%;
+        text-align: center;
+        position: fixed;
+        bottom: 0px;  
+        z-index: 2;
+    }
+
+    section .order {
+        background-color: tomato;
+        padding: 15px;
+        width: 300px;
+        border-radius: 15px;
+        margin: 0 auto 10px;
+        text-align: center;
+        color: white;
+   }
+   
+   section .order:hover {
+    transform: scale(1.1);
+   }
+}
+

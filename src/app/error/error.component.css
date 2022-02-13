@@ -1,0 +1,12 @@
+button {
+    background-color: tomato;
+    width: 30%;
+    border: 1px solid tomato;
+    border-radius: 10px;
+    color: white;
+    margin: 0 auto;
+}
+
+p{
+    font-size: 1em;
+}

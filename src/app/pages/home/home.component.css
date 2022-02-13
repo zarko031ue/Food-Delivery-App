@@ -1,0 +1,72 @@
+.banner{
+    background-image: url(../../../assets/img/hermes-rivera-Ww8eQWjMJWk-unsplash.jpg);
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 1;
+    font-style: italic;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.wrapper img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 25px 25px 0 0;
+    margin-top: 25px;
+}
+
+.wrapper h5{
+    font-size: 2em;
+    font-weight: 500;
+    font-style: italic;
+    padding-left: 10px;
+    margin-top: 3px;
+}
+
+.bi-check{
+    color: rgb(107, 219, 107);
+    position: absolute;
+    bottom: 70%;
+    font-size: 25px;
+    font-style: bold;
+}
+
+.bi-truck{
+    margin: 0 50px 0 50px;
+}
+
+.col-2{
+    padding: 0;
+}
+
+.info{
+    background-color: white;
+}
+
+
+p{
+    font-size: 13px;
+}
+
+.box{
+    width: 100%;
+    padding: 1.5em;
+    background-color: white;
+    border-radius: 0 0 25px 25px;
+    box-shadow:  0 1px 14px rgba(0,0,0, .12);
+    
+}
+

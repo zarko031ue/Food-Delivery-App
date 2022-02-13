@@ -1,0 +1,74 @@
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" routerLink="/">Food Delivery</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="userIsAuthenticated" class="nav-item active checkout">
+          <a class="nav-link" style="cursor: pointer;" 
+          routerLinkActive="active"
+          >Checkout</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item active">
+          <a class="nav-link" style="cursor: pointer;" 
+          routerLinkActive="active"
+          routerLink="/login"
+          >Login</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item active">
+          <a class="nav-link" style="cursor: pointer;" 
+          routerLinkActive="active"
+          routerLink="/singup"
+          >Sing Up</a>
+        </li>
+        <li class="nav-item dropdown"  *ngIf="userIsAuthenticated" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+        {{user.address}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal" data-target="#myModal">Profile</a>
+            <a class="dropdown-item" style="cursor: pointer;" routerLinkActive="active"  (click)="onLogout()" >Logout</a>
+          </div>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link cart" 
+          routerLinkActive="active"
+          ><i routerLink="/cart" style="font-size: 25px;" class="fas fa-cart-plus cart"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog" *ngIf="userIsAuthenticated">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Hello, {{user.name}}!</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="email" class="form-control" id="email" readonly [value]="user.name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" readonly [value]="user.email">
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="text" readonly [value]="user.address">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>

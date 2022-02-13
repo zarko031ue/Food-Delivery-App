@@ -1,0 +1,51 @@
+
+<div class="banner">
+    <h1>You wish <br> we deliver...</h1>
+</div>
+
+<div class="wrapper">
+    <div class="row"> 
+        <div class="col-xs-12 col-sm-12 col-md-6 col-xl-4" *ngFor="let restaurant of restaurants;">
+           <a  
+            [routerLink]="['/food-delivery', restaurant.id]"  
+            style="cursor: pointer"> 
+            <img src="{{ restaurant.img }}" alt="{{restaurant.name}}"></a>
+                <div class="box mb-4">
+                    <h5>{{restaurant.name}}</h5> 
+                    <div class="row justify-content-center text-center mt-4">
+                        <div class="col-2">
+                            <i class="bi bi-envelope"><i class="bi bi-check"></i></i>
+                            <p>Online</p>
+                        </div>
+                        <div class="col-auto">
+                            <i class="bi bi-truck"><i class="bi bi-check"></i></i>
+                            <p>Free <br> Delivery</p>
+                        </div>
+                        <div class="col-2">
+                            <i class="bi bi-bag"><i class="bi bi-check"></i></i>
+                            <p>Takeaway</p>
+                        </div>  
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-4">
+                        <p>Delivery: <br> {{restaurant.deliveryTime}}</p>
+                        </div>
+                        <div class="col-4 text-right">
+                        <p>Takeaway: <br> {{restaurant.takeAway}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-between">
+                        <div class="col-4">
+                        <p>{{restaurant.price}} rsd</p>
+                        </div>
+                        <div class="col-4 text-right">
+                        <p>{{restaurant.deliverIn}} min</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,135 @@
+<div class="bg-image"></div>
+<div class="bg-text">
+  <h2>{{ restaurants[0]?.name }} <span>Food Delivery</span></h2>
+  <div class="row justify-content-between">
+    <div class="col-4 text-left">
+      <p>
+        Delivery: <br />
+        {{ restaurants[0]?.deliveryTime }}
+      </p>
+    </div>
+    <div class="col-4 text-right">
+      <p>
+        Takeaway: <br />
+        {{ restaurants[0]?.takeAway }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="main-content-area">
+  <div class="wrapper">
+    <div class="main-right">
+      <div class="card">
+        <h4 class="mb-4 p-2">Your Order</h4>
+
+        <div class="empty-cart" *ngIf="foodItems.length < 1">
+          <img
+            src="https://sethisbakery.com/assets/website/images/empty-cart.png"
+            alt=""
+          />
+          <h6 class="text-center">Add item to it now</h6>
+        </div>
+
+        <table class="table-sm">
+          <tbody *ngFor="let item of foodItems;let i = index">
+            <tr>
+              <td>
+                <button type="button" class="btn-inc" (click)="inc(item)"><i class="bi bi-plus"></i></button>
+                <span>{{item.qty}}</span>
+                <button type="button" class="btn-dcr" (click)="dec(item.id)"><i class="bi bi-dash"></i></button>
+              </td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.qty * item.price}} rsd</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="checkout" *ngIf="foodItems.length > 0">
+          <p class="total-price">Total price: {{ total }} rsd</p>
+          <button class="btn" (click)="onCheckout()" >Checkout</button>
+        </div>
+      </div>
+    </div>
+    <div class="main-left">
+      <h4 class="food-title pb-3">
+        {{ restaurants[0]?.category[0] }}
+      </h4>
+      <div class="row">
+        <div
+          class="col-xl-6 col-lg-12 col-md-12"
+          *ngFor="let food of restaurants[0]?.menu_1"
+        >
+          <div class="food-box mb-5">
+            <p>{{ food.name }}</p>
+            <p class="ingredients">{{ food.ingredients }}</p>
+            <img src="{{ food.img }}" alt="..." />
+            <p class="text-right pt-5">
+              <span class="price">{{ food.price }} rsd</span>
+            </p>
+            <button *ngIf="!userIsAuthenticated"  routerLink="/login" class="btn btn-primary cart-button" (click)="toCart(food)">
+              To Cart
+            </button>
+            <button *ngIf="userIsAuthenticated"  class="btn btn-primary cart-button" (click)="toCart(food)">
+              To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <h4 class="food-title pb-3">
+        {{ restaurants[0]?.category[1] }}
+      </h4>
+      <div class="row">
+        <div
+          class="col-xl-6 col-lg-12 col-md-12"
+          *ngFor="let food of restaurants[0]?.menu_2"
+        >
+          <div class="food-box mb-5">
+            <p>{{ food.name }}</p>
+            <p class="ingredients">{{ food.ingredients }}</p>
+            <img src="{{ food.img }}" alt="..." />
+            <p class="text-right pt-5">
+              <span class="price">{{ food.price }} rsd</span>
+            </p>
+
+            <button *ngIf="!userIsAuthenticated"  routerLink="/login" class="btn btn-primary cart-button" (click)="toCart(food)">
+              To Cart
+            </button>
+            <button *ngIf="userIsAuthenticated"  class="btn btn-primary cart-button" (click)="toCart(food)">
+              To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <h4 class="food-title pb-3">
+        {{ restaurants[0]?.category[2] }}
+      </h4>
+      <div class="row">
+        <div
+          class="col-xl-6 col-lg-12 col-md-12"
+          *ngFor="let food of restaurants[0]?.menu_3"
+        >
+          <div class="food-box mb-5">
+            <p>{{ food.name }}</p>
+            <img src="{{ food.img }}" alt="..." />
+            <p class="text-right pt-5">
+              <span class="price">{{ food.price }} rsd</span>
+            </p>
+            <button *ngIf="!userIsAuthenticated"  routerLink="/login" class="btn btn-primary cart-button" (click)="toCart(food)">
+              To Cart
+            </button>
+            <button *ngIf="userIsAuthenticated"  class="btn btn-primary cart-button" (click)="toCart(food)">
+              To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="foodItems.length > 0">
+  <section *ngFor="let item of foodItems; let i = index">
+    <p routerLink="/cart">
+      Order <strong>{{ i + 1 }} </strong>for<strong>{{ total }}</strong> rsd
+    </p>
+  </section>
+</ng-container>
