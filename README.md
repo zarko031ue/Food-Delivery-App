@@ -1,3 +1,15 @@
+# FOOD-DELIVERY-APP
+
+# About
+
+Food Delivery App - MEAN stack application   
+
+ - Customers can select food items from three different restaurants, add them to their cart and place orders.
+
+# Frameworks/Tools used
+
+ - Angular, NodeJS, ExpressJS, MongoDB, Bootstrap, Angular Material
+
 # CVPROJECT
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
